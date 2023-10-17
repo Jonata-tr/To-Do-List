@@ -1,0 +1,45 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.create-task{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.create-task span{
+  display: inline-block;
+  background: #ff7272;
+  padding:15px 20px;
+  border-radius: 40px 0 0 40px;
+  position: relative;
+  left: 20px;
+}
+
+.create-task .img-holder{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ff7272;
+  z-index: 1;
+}
+
+
+
+
+
+
+.img-holder img{
+  max-width: 100%;
+  width: 100%;
+
+}
+
+.task-modal{
+  max-width: 600px;
+  padding: 12px 24px;
+  background: #eee;
+}

@@ -8,7 +8,44 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  
+  <header>
+    <h1>ToDo List</h1>
+  </header>
+
+  <main>
+
+    <ul class="js-div to-do-area">
+
+    </ul>
+
+    <div class="create-task js-modal">
+      <span>Create new task</span>
+      <div class="img-holder">
+        <img src="./img/add.svg">
+      </div>
+    </div>
+
+    <!-- Creating Task Modal Area -->
+    <div class="task-modal">
+      <label for="new-task">New Task:</label>
+      <input type="text" name="new-task" id="input-task" value="teste de ToDo">
+
+      <select name="task-type" id="task-type">
+        <option value="estudos">Estudos</option>
+        <option value="trabalhos">Trabalho</option>
+        <option value="casa">Casa</option>
+        <option value="jogos">Jogos</option>
+      </select>
+      
+      <select name="current-state" id="task-state">
+        <option value="planningToDo">Planning to do</option>
+        <option value="inProgress">In progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      
+      <button>Create Task</button>
+    </div>
+  </main>
 
   <script src="./script/main.js"></script>
 </body>
