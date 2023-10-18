@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+
+
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root{
+  background-color: #000;
+
+  color: #fff;
 }
 
 .create-task{
@@ -27,11 +37,6 @@
   z-index: 1;
 }
 
-
-
-
-
-
 .img-holder img{
   max-width: 100%;
   width: 100%;
@@ -40,6 +45,156 @@
 
 .task-modal{
   max-width: 600px;
-  padding: 12px 24px;
-  background: #eee;
+  padding: 12px 40px;
+  /* background: #ECECEC; */
+}
+
+/* .task-modal label{
+  width: 100px;
+  display: block;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #474787;
+  margin-bottom: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+}
+
+.task-modal #input-task{
+  width: 100%;
+  padding: 4px 8px;
+  border: 2px solid #6c6d85;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.task-modal #input-task:focus{
+  outline: none;
+  border: 2px solid #474787;
+  box-shadow: 0 0 0 4px #9c9cf1;
+}
+
+select{
+  width: 120px;
+  font-family: 'Open Sans', sans-serif;
+  
+} */
+
+
+/* Modal Testes */
+
+.custom-select{
+  position: relative;
+  
+  width: 200px;
+  
+  font-size: 1rem;
+}
+
+#category-selected{
+  position: relative;
+}
+
+#category-selected label{
+  font-family: 'Open Sans', sans-serif;
+
+  font-size: 1rem;
+  letter-spacing: 0.0225rem;
+
+  color: #fbf9fe;
+}
+
+#selected-button{
+  font-family: 'Open Sans', sans-serif;
+
+  margin-top: .5rem;
+  display: flex;
+  padding: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: .375rem;
+  border: 1px solid #252529;
+  background-color: #17171a;
+}
+
+#options-view-button:focus + #selected-button, 
+#options-view-button:checked + #selected-button{
+  outline: 1px solid #a881e6;
+}
+
+#category-selected:has(#options-view-button:checked) label{
+  color: #a881e6;
+}
+
+#options-view-button{
+  all: unset;
+  
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+  z-index: 3;
+
+}
+
+#options{
+  display: none;
+
+  margin-top: .25rem;
+
+  border-radius: .375rem;
+  border: 1px solid #252529;
+  background: #17171a;
+}
+
+.option{
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .75rem;
+
+  width: 100%;
+  border-bottom: 1px solid #252529;
+}
+
+.option .label{
+  color: #fbf9fe;
+}
+
+.option:has(input:checked),
+.option:hover{
+  border-bottom: 1px solid #252529;
+  background: #252529;
+}
+
+.option:has(input:focus){
+  outline: 1px solid #a881e6;
+}
+
+.option input[type='radio']{
+  /* Remove todo o css do elemento */
+  all: unset;
+
+  position: absolute;
+  
+  /* ShortHand for top, bottom, left, rigth */
+  inset: 0;
+
+  cursor: pointer;
+}
+
+
+#category-selected:has(#options-view-button:checked) + #options{
+  display: block;
+}
+
+.custom-select:has(.option input:checked) #category-selected label{
+  color: #a881e6;
+}
+
+.custom-select:has(.option input:checked) #selected-value{
+  color: #fbf9fe;
 }

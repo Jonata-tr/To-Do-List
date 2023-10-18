@@ -40,7 +40,6 @@ function createTask(taskInput, taskType){
 
   const taskArea = document.querySelector(".to-do-area")
 
-  console.log(new Date());
   taskArea.appendChild(li.element)
 }
 
@@ -55,3 +54,22 @@ function NewListItem(tittle, type, time){
   ${this.type} ${this.time}` 
 }
 
+
+
+
+let customSelect = document.querySelector('.customSelect'),
+selectedValue = document.querySelector('#selected-value'),
+optionsViewButton = document.querySelector('#options-view-button'),
+inputsOptions = document.querySelectorAll(".option input")
+
+inputsOptions.forEach(input => {
+  input.addEventListener('click', event => {
+    selectedValue.textContent = input.dataset.label
+
+    const isMouseOrTouch = 
+      event.pointerType == 'mouse' ||
+      event.pointerType == 'touch'
+
+    isMouseOrTouch && optionsViewButton.click()
+  })
+})

@@ -28,23 +28,87 @@
     <!-- Creating Task Modal Area -->
     <div class="task-modal">
       <label for="new-task">New Task:</label>
-      <input type="text" name="new-task" id="input-task" value="teste de ToDo">
+      <input 
+        type="text" 
+        name="new-task" 
+        value="teste de ToDo"
+        id="input-task"
+      >
 
-      <select name="task-type" id="task-type">
-        <option value="estudos">Estudos</option>
-        <option value="trabalhos">Trabalho</option>
-        <option value="casa">Casa</option>
-        <option value="jogos">Jogos</option>
-      </select>
+      <div class="custom-select">
+        <div id="category-selected">
+          <label for="options-view-button">Tipo de tarefa</label>
+          <input type="checkbox" id="options-view-button">
+
+          <div id="selected-button">
+            <div id="selected-value">Seleciona o tipo:</div>
+          </div>
+        </div>
+
+        <ul id="options">
+          <li class="option">
+
+            <input 
+              type="radio"
+              name="category"
+              value="trabalho"
+              data-label="Trabalho"
+            >
+
+            <span class="label">Trabalho</span>
+          </li>
+          <li class="option">
+
+            <input 
+              type="radio"
+              name="category"
+              value="jogos"
+              data-label="Jogos"
+            >
+
+            <span class="label">Jogos</span>
+          </li>
+          <li class="option">
+
+            <input 
+              type="radio"
+              name="category"
+              value="casa"
+              data-label="Casa"
+            >
+
+            <span class="label">Casa</span>
+          </li>
+          <li class="option">
+
+            <input 
+              type="radio"
+              name="category"
+              value="estudos"
+              data-label="Estudos"
+            >
+
+            <span class="label">Estudos</span>
+          </li>
+        </ul>
+        
+        <!-- <select name="task-type" id="task-type">
+          <option value="estudos">Estudos</option>
+          <option value="trabalhos">Trabalho</option>
+          <option value="casa">Casa</option>
+          <option value="jogos">Jogos</option>
+        </select> -->
+      </div>
       
-      <select name="current-state" id="task-state">
-        <option value="planningToDo">Planning to do</option>
-        <option value="inProgress">In progress</option>
-        <option value="completed">Completed</option>
-      </select>
+      <!-- <div class="custom-select">
+        <select name="current-state" id="task-state">
+          <option value="planningToDo">Planning to do</option>
+          <option value="inProgress">In progress</option>
+        </select>
+      </div>
       
       <button>Create Task</button>
-    </div>
+    </div> -->
   </main>
 
   <script src="./script/main.js"></script>
