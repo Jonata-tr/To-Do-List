@@ -30,23 +30,74 @@
       <label for="new-task">New Task:</label>
       <input type="text" name="new-task" id="input-task" value="teste de ToDo">
 
-      <select name="task-type" id="task-type">
-        <option value="estudos">Estudos</option>
-        <option value="trabalhos">Trabalho</option>
-        <option value="casa">Casa</option>
-        <option value="jogos">Jogos</option>
-      </select>
-      
-      <select name="current-state" id="task-state">
-        <option value="planningToDo">Planning to do</option>
-        <option value="inProgress">In progress</option>
-        <option value="completed">Completed</option>
-      </select>
-      
-      <button>Create Task</button>
-    </div>
+      <div class="custom-select">
+        <div id="category-select">
+          <label for="options-view-button">Categoria</label>
+          <input type="checkbox" id="options-view-button">
+          
+          <div id="select-button">
+            <div id="selected-category">
+              Selecione a categoria
+            </div>
+            <i data-lucide="chevron-down" id="arrow-down"></i>
+            <i data-lucide="chevron-up" id="arrow-up"></i>
+          </div>
+        </div>
+
+        <ul id="options">
+          <li class="option">
+            <input 
+            type="radio"
+            name="category" 
+            value="trabalho"
+            data-category="Trabalho"
+            >
+            
+            <i data-lucide="briefcase" class="my-class"></i>
+            <span class="label">Trabalho</span>
+          </li>
+
+          <li class="option">
+            <input 
+            type="radio"
+            name="category" 
+            value="jogos"
+            data-category="Jogos"
+            >
+
+            <i data-lucide="gamepad-2" class="my-class"></i>
+            <span class="label">Jogos</span>
+          </li>
+
+          <li class="option">
+            <input 
+            type="radio"
+            name="category" 
+            value="estudos"
+            data-category="Estudos"
+            >
+
+            <i data-lucide="book-copy"></i>
+            <span class="label">Estudos</span>
+          </li>
+
+          <li class="option">
+            <input 
+            type="radio"
+            name="category" 
+            value="casa"
+            data-category="Casa"
+            >
+
+            <i data-lucide="home"></i>
+            <span class="label">Casa</span>
+          </li>
+        </ul>
+      </div>
   </main>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="./script/main.js"></script>
+  
 </body>
 </html>

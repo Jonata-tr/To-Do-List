@@ -1,3 +1,5 @@
+lucide.createIcons();
+
 // Prototipo de criação de elementos da toDo List 
 
 const creatTask = document.querySelector(".create-task");
@@ -9,10 +11,9 @@ function getTaskValues(){
   // Gets the task values
   const taskInput = document.querySelector('#input-task').value
   console.log(taskInput);
-  const taskType = document.querySelector('#task-type').value
   
   // Empty input don't work
-  checksInputValue(taskInput, taskType)
+  checksInputValue(taskInput)
 
 
   const date = new Date()
@@ -55,3 +56,31 @@ function NewListItem(tittle, type, time){
   ${this.type} ${this.time}` 
 }
 
+// ############################################
+// MODAL AREA
+
+function handleSelect(){
+  const options = document.querySelectorAll(".option input")
+  const buttonView = document.querySelector("#options-view-button")
+
+  buttonView.addEventListener("click", ( ) => {
+    buttonView.classList.toggle("ativo")
+  })  
+
+  options.forEach(item => {
+    item.addEventListener("click", event => {
+      const selectedCategory = document.querySelector("#selected-category")
+    
+      selectedCategory.textContent = item.dataset.category;
+
+      const mouseOrTouch = 
+        event.pointerType == 'mouse' ||
+        event.pointerType == 'touch'
+      
+      mouseOrTouch && buttonView.click()
+      })
+  })
+
+}
+
+handleSelect();
