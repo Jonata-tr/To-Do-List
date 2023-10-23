@@ -10,22 +10,24 @@ creatTask.addEventListener('click', getTaskValues);
 function getTaskValues(){
   // Gets the task values
   const taskInput = document.querySelector('#input-task').value
-  console.log(taskInput);
-  
+  const taskType = document.querySelector('.selected-category').innerText
+
   // Empty input don't work
-  checksInputValue(taskInput)
-
-
-  const date = new Date()
+  checksInputValue(taskInput, taskType)
 }
 
 function checksInputValue(taskInput, taskType) {
   if(taskInput.replace(/\s+/g, '').length){
+    if(taskType === 'Selecionar'){
+      alert('Selecione uma categoria!')
+      return;
+    }
     createTask(taskInput, taskType)
   } else {
     document.querySelector("#input-task").placeholder = 'Não pode estar vazio.'
   }
-
+  
+  
 }
 
 function createTask(taskInput, taskType){
@@ -60,27 +62,29 @@ function NewListItem(tittle, type, time){
 // MODAL AREA
 
 function handleSelect(){
-  const options = document.querySelectorAll(".option input")
-  const buttonView = document.querySelector("#options-view-button")
-
-  buttonView.addEventListener("click", ( ) => {
-    buttonView.classList.toggle("ativo")
-  })  
-
+  const options = document.querySelectorAll(".option input");
+  
   options.forEach(item => {
     item.addEventListener("click", event => {
-      const selectedCategory = document.querySelector("#selected-category")
-    
-      selectedCategory.textContent = item.dataset.category;
-
-      const mouseOrTouch = 
-        event.pointerType == 'mouse' ||
-        event.pointerType == 'touch'
+      const customSelect = event.currentTarget.closest('.custom-select');
+      const selectedCategory = customSelect.querySelector('.selected-category');
       
-      mouseOrTouch && buttonView.click()
-      })
-  })
+      selectedCategory.textContent = item.dataset.category;
+      
+      closeSelect(customSelect, event.pointerType)
+    })
+  }) 
+}
 
+function closeSelect(custom, evento) {
+  const buttonView = custom.querySelector(".options-view-button");
+  console.log(buttonView);
+
+  const mouseOrTouch = 
+  evento == 'mouse' ||
+  evento == 'touch'
+
+  mouseOrTouch && buttonView.click()
 }
 
 handleSelect();

@@ -30,70 +30,116 @@
       <label for="new-task">New Task:</label>
       <input type="text" name="new-task" id="input-task" value="teste de ToDo">
 
-      <div class="custom-select">
-        <div id="category-select">
-          <label for="options-view-button">Categoria</label>
-          <input type="checkbox" id="options-view-button">
-          
-          <div id="select-button">
-            <div id="selected-category">
-              Selecione a categoria
+      <div class="select-holder">
+        <div class="custom-select">
+          <div class="category-select">
+            <label for="categoria">Selecione a categoria</label>
+            <input type="checkbox" class="options-view-button" name="categoria">
+            
+            <div class="select-button">
+              <div class="selected-category">
+                Selecionar
+              </div>
+              <i data-lucide="chevron-down" class="arrow-down"></i>
             </div>
-            <i data-lucide="chevron-down" id="arrow-down"></i>
-            <i data-lucide="chevron-up" id="arrow-up"></i>
+          </div>
+  
+          <ul class="options">
+            <li class="option">
+              <input 
+              type="radio"
+              name="category" 
+              value="trabalho"
+              data-category="Trabalho"
+              required
+              >
+              
+              <i data-lucide="briefcase" class="my-icon"></i>
+              <span class="label">Trabalho</span>
+            </li>
+  
+            <li class="option">
+              <input 
+              type="radio"
+              name="category" 
+              value="jogos"
+              data-category="Jogos"
+              >
+  
+              <i data-lucide="gamepad-2" class="my-icon"></i>
+              <span class="label">Jogos</span>
+            </li>
+  
+            <li class="option">
+              <input 
+              type="radio"
+              name="category" 
+              value="estudos"
+              data-category="Estudos"
+              >
+  
+              <i data-lucide="book-copy" class="my-icon"></i>
+              <span class="label">Estudos</span>
+            </li>
+  
+            <li class="option">
+              <input 
+              type="radio"
+              name="category" 
+              value="casa"
+              data-category="Casa"
+              >
+  
+              <i data-lucide="home" class="my-icon"></i>
+              <span class="label">Casa</span>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="custom-select">
+          <div class="category-select">
+            <label for="estadoToDo">Estado da tarefa:</label>
+            <input type="checkbox" class="options-view-button" name="estadoToDo">
+            
+            <div class="select-button">
+              <div class="selected-category">
+                Selecionar
+              </div>
+              <i data-lucide="chevron-down" class="arrow-down"></i>
+            </div>
+          </div>
+  
+            <ul class="options">
+              <li class="option">
+                <input 
+                type="radio"
+                name="state" 
+                value="planejada"
+                data-category="Planejada"
+                >
+                
+                <i data-lucide="briefcase" class="my-icon"></i>
+                <span class="label">Planejada</span>
+              </li>
+    
+              <li class="option">
+                <input 
+                type="radio"
+                name="state" 
+                value="emAndamento"
+                data-category="Em Andamento"
+                >
+    
+                <i data-lucide="gamepad-2" class="my-icon"></i>
+                <span class="label">Jogos</span>
+              </li>
+    
+            </ul>
           </div>
         </div>
-
-        <ul id="options">
-          <li class="option">
-            <input 
-            type="radio"
-            name="category" 
-            value="trabalho"
-            data-category="Trabalho"
-            >
-            
-            <i data-lucide="briefcase" class="my-class"></i>
-            <span class="label">Trabalho</span>
-          </li>
-
-          <li class="option">
-            <input 
-            type="radio"
-            name="category" 
-            value="jogos"
-            data-category="Jogos"
-            >
-
-            <i data-lucide="gamepad-2" class="my-class"></i>
-            <span class="label">Jogos</span>
-          </li>
-
-          <li class="option">
-            <input 
-            type="radio"
-            name="category" 
-            value="estudos"
-            data-category="Estudos"
-            >
-
-            <i data-lucide="book-copy"></i>
-            <span class="label">Estudos</span>
-          </li>
-
-          <li class="option">
-            <input 
-            type="radio"
-            name="category" 
-            value="casa"
-            data-category="Casa"
-            >
-
-            <i data-lucide="home"></i>
-            <span class="label">Casa</span>
-          </li>
-        </ul>
       </div>
+
+    </div>  
   </main>
 
   <script src="https://unpkg.com/lucide@latest"></script>

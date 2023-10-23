@@ -2,24 +2,28 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.custom-select:has(#options-view-button:checked) #options{
+.custom-select{
+  display: inline;
+}
+
+.custom-select:has(.options-view-button:checked) .options{
   display: block;
 }
 
-#category-select{
-  width: 220px;
+.category-select{
+  width: 210px;
 
   position: relative;
 }
 
-#arrow-down{
+.arrow-down{
   transition: .2s linear;
 }
-#category-select:has(#options-view-button:checked) #arrow-down{
+.category-select:has(.options-view-button:checked) .arrow-down{
   rotate: -180deg;
 }
 
-#options-view-button{
+.options-view-button{
   all: unset;  /* Remove todo o css do element */
 
   position: absolute;
@@ -29,32 +33,25 @@
   z-index: 1;
 }
 
-#category-select:has(#options-view-button:checked) label,
-#category-select:has(#options-view-button:checked) #selected-category{
-  color: #fcaedc;
-}
-
-#arrow-up{
-  display: none;
-}
-
-#select-button{
-  padding: 10px;
+.select-button{
+  padding: 6px 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   
-  background: #333333;
+  background: var(--r-1);
   color: #fff;
 
   border-radius: 4px;
 }
 
 
-#options{
+.options{
   width: 250px;
   display: none;
+
+  position: absolute;
 
   background: #333333;
 
@@ -68,16 +65,20 @@
   align-items: center;
   gap: 10px;
 
-  color: #fff;
+  color: #ffffff;
 
   border-bottom: 1px solid #000;
   
   padding: 10px;
 }
 
-.option:not(:has(input:checked)):hover,
+.option .my-icon{
+  width: 20px;
+}
+
+.option:hover,
 .option:not(:has(input:checked)):hover span{
-  color: #55055f;
+  color: var(--r-2);
   background: #252525;
 }
 
@@ -91,5 +92,5 @@
 }
 
 .option:has(input:checked){
-  color: #fcaedc;
+  color: var(--r-3);
 }
