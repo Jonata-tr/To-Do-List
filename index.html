@@ -9,26 +9,88 @@
 </head>
 <body>
   <header>
-    <h1>ToDo List</h1>
+    <div id="header-wrapper">
+      <div class="search">
+        <label for="search">Pesquisar tarefa: </label>
+        <input type="text" name="search" id="search">
+      </div>
+  
+      <div class="filter-area">
+        <div id="sort">
+          Ordenar por: 
+          <div class="sort-by">
+            <label for="sort">Mais recente</label>
+            <input type="radio" name="sort" value="recente" checked>
+          </div>
+  
+          <div class="sort-by">
+            <label for="sort">Mais antigas</label>
+            <input type="radio" name="sort" value="antiga">
+          </div>
+        </div>
+  
+        <div id="filter-section">
+          <button id="filter"> <i data-lucide="filter" id="filter-icon"></i> Filter</button>
+  
+          <div class="task-filter">
+            <div class="filter-option">
+              <label for="filter">Trabalho</label>
+              <input type="radio" name="filter" value="trabalho">
+            </div>
+            <div class="filter-option">
+              <label for="filter">Casa</label>
+              <input type="radio" name="filter" value="casa">
+            </div>
+            <div class="filter-option">
+              <label for="filter">Escola</label>
+              <input type="radio" name="filter" value="escola">
+            </div>
+            <div class="filter-option">
+              <label for="filter">Lazer</label>
+              <input type="radio" name="filter" value="lazer">
+            </div>
+            <div class="filter-option">
+              <label for="filter">Jogos</label>
+              <input type="radio" name="filter" value="jogos">
+            </div>
+          </div>
+        </div>    
+      </div>
+  
+    </div>
   </header>
 
   <main>
 
-    <ul class="js-div to-do-area">
-
-    </ul>
+    <div id="to-do-area">
+      <div id="planejada" class="js-div">
+        <h1>Tarefas planejadas</h1>
+      </div>
+      
+      <div id="andamento" class="js-div">
+        <h1>Tarefas em andamento</h1>
+        
+      </div>
+      
+      <div id="completa" class="js-div">
+        <h1>Tarefas concluidas</h1>
+  
+      </div>
+    </div>
 
     <div class="create-task js-modal">
       <span>Create new task</span>
       <div class="img-holder">
-        <img src="./img/add.svg">
+        <i data-lucide="plus" id="add-task-icon"></i>
       </div>
     </div>
 
     <!-- Creating Task Modal Area -->
-    <div class="task-modal">
-      <label for="new-task">New Task:</label>
-      <input type="text" name="new-task" id="input-task" value="teste de ToDo">
+    <!-- <div class="task-modal">
+      <div class="task-input">
+        <label for="new-task">New Task:</label>
+        <input type="text" name="new-task" id="input-task" value="teste de ToDo">
+      </div>
 
       <div class="select-holder">
         <div class="custom-select">
@@ -118,7 +180,7 @@
                 data-category="Planejada"
                 >
                 
-                <i data-lucide="briefcase" class="my-icon"></i>
+                <i data-lucide="calendar" class="my-icon"></i>
                 <span class="label">Planejada</span>
               </li>
     
@@ -130,16 +192,18 @@
                 data-category="Em Andamento"
                 >
     
-                <i data-lucide="gamepad-2" class="my-icon"></i>
-                <span class="label">Jogos</span>
+                <i data-lucide="circle-dashed" class="my-icon"></i>
+                <span class="label">Em andamento</span>
               </li>
     
             </ul>
           </div>
-        </div>
       </div>
-
-    </div>  
+    
+      <button class="button">
+        CREATE TASK
+      </button>
+    </div>   -->
   </main>
 
   <script src="https://unpkg.com/lucide@latest"></script>
