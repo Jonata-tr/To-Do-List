@@ -10,8 +10,20 @@
   display: block;
 }
 
+.select-holder{
+  flex: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-top: 12px;
+}
+
+
 .category-select{
-  width: 210px;
+  width: 100%;
 
   position: relative;
 }
@@ -33,6 +45,19 @@
   z-index: 1;
 }
 
+.custom-select:has(.options-view-button.ativo) .options{
+  animation:down-options .2s ease-out forwards;
+}
+
+@keyframes down-options{
+  from{
+    margin-top: -10px;
+  }
+  to{
+    margin-top: 6px;
+  }
+}
+
 .select-button{
   padding: 6px 20px;
 
@@ -40,7 +65,7 @@
   align-items: center;
   justify-content: space-between;
   
-  background: var(--r-1);
+  background: #525252;
   color: #fff;
 
   border-radius: 4px;
@@ -49,17 +74,22 @@
 
 .options{
   width: 210px;
+
   display: none;
 
   position: absolute;
+  right: 28px;
 
   background: #333333;
 
   margin-top: 4px;
+
+  z-index: 2;
 }
 
 .option{
   position: relative;
+
   z-index: 100;
 
   display: flex;

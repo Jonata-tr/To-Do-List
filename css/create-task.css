@@ -5,13 +5,18 @@
   position: fixed;
   bottom: 80px;
   right: 40px;
-}
 
+  z-index: 1;
+
+  cursor: pointer;
+}
 
 .create-task span{
   display: none;
-  
-  background: #eebbc3;
+
+  color: #fffffe;
+
+  background: #7f5af0;
   
   padding:15px 20px;
   
@@ -22,7 +27,7 @@
 .create-task:hover span{
   display: initial;
 
-  animation: create-task .3s ease-out forwards;
+  animation:create-task .3s ease-out forwards;
 }
 
 @keyframes create-task{
@@ -30,7 +35,7 @@
     left: 30px;
   }
   to{
-    left:18px
+    left:19px
   }
 }
 
@@ -40,7 +45,7 @@
 
   border-radius: 50%;
   
-  background-color: #eebbc3;
+  background-color: #7f5af0;
   
   z-index: 1;
 
@@ -53,7 +58,7 @@
   width: 32px;
   stroke-width: 4px;
 
-  color: #fff;
+  color: #fffe;
 }
 
 .img-holder img{
@@ -62,32 +67,112 @@
 
 }
 
+#modal-wrapper{
+  display: none;
+  position: absolute;
+
+  z-index: 1;
+}
+#modal-wrapper.ativo{
+  inset: 0;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  background: #000000e0;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+main:has(#modal-wrapper.ativo){
+  height: 89vh;
+  overflow-y: hidden;
+}
+
 .task-modal{
-  max-width: 500px;
+  max-width: 600px;
   z-index: -2;
   
-  padding:28px;
- 
-  background: #eee;
+  padding:20px 28px 32px;
+
+  background: #14151a;
+
+  border: 2px solid #d1c2ff;
+  border-radius: 8px;
 
   display: grid;
   grid-template-rows: repeat(3, auto);
   gap: 8px;
+
+  position: relative;
+  inset: 0;
+
+  z-index: 2;
+}
+
+#close-wrapper{
+  justify-self: right;
+
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: none;
+
+  display: flex;
+  place-items: center;
+
+  cursor: pointer;
+
+  z-index: 999;
+}
+#close-wrapper:hover{
+  border: 2px solid var(--r-3);
+}
+
+#close-icon{
+  color: #eeef;
+
+  flex: 1;
 }
 
 .task-modal label{
   font-family: Arial, Helvetica, sans-serif;
 
-  font-weight: 700;
-
-  color: #1d004d;
+  color: rgb(207, 227, 250);
 }
 
-.task-modal input[type="text"]{
+.task-modal label ~ *{
+  margin-top: 6px;
+}
+
+#input-task{
   width: 100%;
 
-  border: 2px solid var(--r-2);
+  border:2px solid var(--r-3);
   border-radius: 4px;
+}
 
-  padding: 8px 10px;
+#input-task:focus{
+  border: 2px solid #ea94ff;
+}
+
+.finish-create{
+  display: inline-block;
+  justify-self: center;
+
+  padding: 10px 20px;
+
+  margin-top: 32px;
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px 2px #ffffff2c;
+
+  background: var(--r-3);
+  color: #ffffff;
 }

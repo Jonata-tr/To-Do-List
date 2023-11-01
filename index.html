@@ -10,9 +10,10 @@
 <body>
   <header>
     <div id="header-wrapper">
-      <div class="search">
-        <label for="search">Pesquisar tarefa: </label>
+      <div id="search">
+        <label for="search">Search All</label>
         <input type="text" name="search" id="search">
+        <button type="button"><i data-lucide="search" id="search-icon"></i></button>
       </div>
   
       <div class="filter-area">
@@ -61,7 +62,6 @@
   </header>
 
   <main>
-
     <div id="to-do-area">
       <div id="planejada" class="js-div">
         <h1>Tarefas planejadas</h1>
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <div class="create-task js-modal">
+    <div class="create-task">
       <span>Create new task</span>
       <div class="img-holder">
         <i data-lucide="plus" id="add-task-icon"></i>
@@ -86,124 +86,130 @@
     </div>
 
     <!-- Creating Task Modal Area -->
-    <!-- <div class="task-modal">
-      <div class="task-input">
-        <label for="new-task">New Task:</label>
-        <input type="text" name="new-task" id="input-task" value="teste de ToDo">
-      </div>
+    <div id="modal-wrapper">
+      
+      <div class="task-modal js-modal">
+        <button id="close-wrapper">
+          <i data-lucide="x" id="close-icon"></i>
+        </button>
 
-      <div class="select-holder">
-        <div class="custom-select">
-          <div class="category-select">
-            <label for="categoria">Selecione a categoria</label>
-            <input type="checkbox" class="options-view-button" name="categoria">
-            
-            <div class="select-button">
-              <div class="selected-category">
-                Selecionar
-              </div>
-              <i data-lucide="chevron-down" class="arrow-down"></i>
-            </div>
-          </div>
-  
-          <ul class="options">
-            <li class="option">
-              <input 
-              type="radio"
-              name="category" 
-              value="trabalho"
-              data-category="Trabalho"
-              required
-              >
-              
-              <i data-lucide="briefcase" class="my-icon"></i>
-              <span class="label">Trabalho</span>
-            </li>
-  
-            <li class="option">
-              <input 
-              type="radio"
-              name="category" 
-              value="jogos"
-              data-category="Jogos"
-              >
-  
-              <i data-lucide="gamepad-2" class="my-icon"></i>
-              <span class="label">Jogos</span>
-            </li>
-  
-            <li class="option">
-              <input 
-              type="radio"
-              name="category" 
-              value="estudos"
-              data-category="Estudos"
-              >
-  
-              <i data-lucide="book-copy" class="my-icon"></i>
-              <span class="label">Estudos</span>
-            </li>
-  
-            <li class="option">
-              <input 
-              type="radio"
-              name="category" 
-              value="casa"
-              data-category="Casa"
-              >
-  
-              <i data-lucide="home" class="my-icon"></i>
-              <span class="label">Casa</span>
-            </li>
-          </ul>
+        <div class="task-input">
+          <label for="new-task">New Task:</label>
+          <input type="text" name="new-task" id="input-task" placeholder="Write new task here!!">
         </div>
   
-        <div class="custom-select">
-          <div class="category-select">
-            <label for="estadoToDo">Estado da tarefa:</label>
-            <input type="checkbox" class="options-view-button" name="estadoToDo">
-            
-            <div class="select-button">
-              <div class="selected-category">
-                Selecionar
+        <div class="select-holder">
+          <div class="custom-select">
+            <div class="category-select">
+              <label for="categoria">Selecione a categoria</label>
+              <input type="checkbox" class="options-view-button" name="categoria">
+              
+              <div class="select-button">
+                <div class="selected-category">
+                  Selecionar
+                </div>
+                <i data-lucide="chevron-down" class="arrow-down"></i>
               </div>
-              <i data-lucide="chevron-down" class="arrow-down"></i>
             </div>
-          </div>
-  
+    
             <ul class="options">
               <li class="option">
                 <input 
                 type="radio"
-                name="state" 
-                value="planejada"
-                data-category="Planejada"
+                name="category" 
+                value="trabalho"
+                data-category="Trabalho"
                 >
                 
-                <i data-lucide="calendar" class="my-icon"></i>
-                <span class="label">Planejada</span>
+                <i data-lucide="briefcase" class="my-icon"></i>
+                <span class="label">Trabalho</span>
               </li>
     
               <li class="option">
                 <input 
                 type="radio"
-                name="state" 
-                value="emAndamento"
-                data-category="Em Andamento"
+                name="category" 
+                value="jogos"
+                data-category="Jogos"
                 >
     
-                <i data-lucide="circle-dashed" class="my-icon"></i>
-                <span class="label">Em andamento</span>
+                <i data-lucide="gamepad-2" class="my-icon"></i>
+                <span class="label">Jogos</span>
               </li>
     
+              <li class="option">
+                <input 
+                type="radio"
+                name="category" 
+                value="estudos"
+                data-category="Estudos"
+                >
+    
+                <i data-lucide="book-copy" class="my-icon"></i>
+                <span class="label">Estudos</span>
+              </li>
+    
+              <li class="option">
+                <input 
+                type="radio"
+                name="category" 
+                value="casa"
+                data-category="Casa"
+                >
+    
+                <i data-lucide="home" class="my-icon"></i>
+                <span class="label">Casa</span>
+              </li>
             </ul>
           </div>
-      </div>
     
-      <button class="button">
-        CREATE TASK
-      </button>
-    </div>   -->
+          <div class="custom-select">
+            <div class="category-select">
+              <label for="estadoToDo">Estado da tarefa:</label>
+              <input type="checkbox" class="options-view-button" name="estadoToDo">
+              
+              <div class="select-button">
+                <div class="selected-category">
+                  Selecionar
+                </div>
+                <i data-lucide="chevron-down" class="arrow-down"></i>
+              </div>
+            </div>
+    
+              <ul class="options">
+                <li class="option">
+                  <input 
+                  type="radio"
+                  name="state" 
+                  value="planejada"
+                  data-category="Planejada"
+                  >
+                  
+                  <i data-lucide="calendar" class="my-icon"></i>
+                  <span class="label">Planejada</span>
+                </li>
+      
+                <li class="option">
+                  <input 
+                  type="radio"
+                  name="state" 
+                  value="emAndamento"
+                  data-category="Em Andamento"
+                  >
+      
+                  <i data-lucide="circle-dashed" class="my-icon"></i>
+                  <span class="label">Em andamento</span>
+                </li>
+      
+              </ul>
+            </div>
+        </div>
+      
+        <button class="finish-create">
+          CREATE TASK
+        </button>
+      </div>  
+    </div>
   </main>
 
   <script src="https://unpkg.com/lucide@latest"></script>

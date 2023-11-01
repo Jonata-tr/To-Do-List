@@ -1,5 +1,45 @@
 lucide.createIcons();
 
+// #####################
+// Show modal
+
+function showModal(){
+  const modalButton = document.querySelector(".create-task")
+
+  modalButton.addEventListener('click', () => {
+    const modalWrapper = document.querySelector("#modal-wrapper")
+
+    modalWrapper.classList.add('ativo')
+  })
+}
+
+function  closeModal() {
+  const closeButton = document.querySelector("#close-wrapper")
+
+  closeButton.addEventListener("click" , () => {
+    const newTaskInput = document.querySelector("#input-task"),
+    selectInput = document.querySelectorAll('.option input'),
+    selectLabel = document.querySelectorAll('.option'),
+    selectedCategory = document.querySelectorAll(".selected-category");
+    
+
+    newTaskInput.value = '';
+    
+    selectedCategory.forEach(item => {
+      item.innerText = 'Selecionar'
+    })
+  
+    selectInput.forEach(item => {
+      item.checked = false
+    })
+    
+    const modalWrapper = document.querySelector("#modal-wrapper")
+    modalWrapper.classList.remove('ativo')
+  })
+}
+
+showModal();
+closeModal();
 
 const filter = document.querySelector("#filter")
 filter.addEventListener("click", ()=> {
@@ -105,11 +145,8 @@ for(let i =0; i <= 4; i++){
   completa.appendChild(liii.element)
 }
 
-//##############################################
-// Only one at a time
-
 // ############################################
-// MODAL AREA
+// CUSTOM SELECT
 
 function handleSelect(){
   const options = document.querySelectorAll(".option input");
@@ -121,12 +158,12 @@ function handleSelect(){
       
       selectedCategory.textContent = item.dataset.category;
       
-      closeSelect(customSelect, event.pointerType)
+      closeSelectOptions(customSelect, event.pointerType)
     })
   }) 
 }
 
-function closeSelect(custom, evento) {
+function closeSelectOptions(custom, evento) {
   const buttonView = custom.querySelector(".options-view-button");
 
   const mouseOrTouch = 
@@ -137,3 +174,24 @@ function closeSelect(custom, evento) {
 }
 
 handleSelect();
+
+function closeSelect(){
+  const optionsView = document.querySelectorAll('.options-view-button')
+  optionsView.forEach( button => {
+    button.addEventListener('click', event => {
+      button.classList.toggle("ativo")
+      checkSelectState(event, optionsView);
+    })
+  })
+}
+
+function checkSelectState(event, optionsView){
+  optionsView.forEach(button => {
+    if(button !== event.currentTarget){
+      button.checked = false;
+      button.classList.remove('ativo') 
+    }
+  })  
+}
+
+closeSelect();
