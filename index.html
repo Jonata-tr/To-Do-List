@@ -63,18 +63,23 @@
 
   <main>
     <div id="to-do-area">
-      <div id="planejada" class="js-div">
+      <div class="js-div">
         <h1>Tarefas planejadas</h1>
+        <div id="planejada"></div>
       </div>
       
-      <div id="andamento" class="js-div">
+      <div class="js-div">
         <h1>Tarefas em andamento</h1>
         
+        <div id="andamento"></div>
       </div>
       
-      <div id="completa" class="js-div">
+      <div class="js-div">
         <h1>Tarefas concluidas</h1>
   
+        <div id="completa">
+          
+        </div>
       </div>
     </div>
 
@@ -105,7 +110,7 @@
               <input type="checkbox" class="options-view-button" name="categoria">
               
               <div class="select-button">
-                <div class="selected-category">
+                <div class="selected-category" id="task-type">
                   Selecionar
                 </div>
                 <i data-lucide="chevron-down" class="arrow-down"></i>
@@ -169,7 +174,7 @@
               <input type="checkbox" class="options-view-button" name="estadoToDo">
               
               <div class="select-button">
-                <div class="selected-category">
+                <div class="selected-category" id="task-state">
                   Selecionar
                 </div>
                 <i data-lucide="chevron-down" class="arrow-down"></i>
@@ -193,7 +198,7 @@
                   <input 
                   type="radio"
                   name="state" 
-                  value="emAndamento"
+                  value="andamento"
                   data-category="Em Andamento"
                   >
       

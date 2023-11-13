@@ -1,0 +1,94 @@
+.task-type-area .buttons{
+  display: flex;
+  align-items: center;
+}
+
+.task-type-area button{
+  border: none;
+  border-radius: 4px;
+
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.task-type-area button + button{
+  margin: 12px;
+}
+
+.task-type-area .icons{
+  width: 18px;
+  height: 18px;
+}
+
+.task-options{
+  position: relative;
+}
+
+.task-erase{
+  position: relative;
+}
+
+.erase-confirmation{
+  display: none;
+
+  text-align: center;
+  color: #eeeeee;
+
+  position: absolute;
+  right: -34px;
+  bottom: 50px;
+  
+  background: #242529;
+  
+  border: 3px solid #7f5af0;
+  border-radius: 8px;
+
+  padding: 10px 20px;
+
+  width: 32ch;
+}
+
+.erase-confirmation.ativo{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+}
+
+.erase-confirmation::after{
+  content: '';
+
+  position: absolute;
+  bottom: -10px;
+  right: 80px;
+
+
+  display: inline-block;
+
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+
+  border-top: 8px solid #7f5af0;
+}
+
+.erase-confirmation .confirmation-button button{
+  border: 2px solid #7f5af0;
+
+  margin-top: 10px;
+  
+  color: #eeeeee;
+  
+  padding: 6px 18px;
+
+  display: inline-block;
+}
+
+.confirmation-button button:hover{
+  background: #7f5af0;
+}

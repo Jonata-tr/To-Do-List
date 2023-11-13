@@ -6,7 +6,7 @@ header{
   max-width: 1800px;
   margin: 0 auto;
 
-  padding: 32px 80px;
+  padding: 32px 40px;
 
   display: flex;
   align-items: center;
@@ -210,4 +210,33 @@ input[type="text"]:focus{
   
   outline: red;
   z-index: 1;
+}
+
+.checkbox{
+  position: relative;
+
+  border: 1px solid #7f5af0;
+  border-radius: 4px;
+
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  width: 30px;
+  height: 30px;
+}
+
+input[type='checkbox']{
+  all: unset;
+  
+  position: absolute;
+  inset: 0;
+}
+
+.checkbox:has(input[type='checkbox']:checked) .icons{
+  color: #474787;
+  flex: 1;
 }
